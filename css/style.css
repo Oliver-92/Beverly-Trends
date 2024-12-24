@@ -1,0 +1,44 @@
+.hero-section {
+    background-image: url('/img/banner03.webp');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 0;
+    height: 100vh;
+}
+
+#btnTop {
+    display:flex;
+	padding:20px;
+	font-size:20px;
+	color:#fff;
+	cursor:pointer;
+	position: fixed;
+	bottom:20px;
+	right:20px;
+}
+
+.symbol {
+    text-shadow: black 1px 1px 2px;
+    font-size: 30px;
+    padding: 0 5px;
+}
+
+#btnTop:hover {
+    transform: scale(1.1);
+}
+
+#btnTop:active {
+    transform: scale(0.95);
+}
+
+.product-card img {
+    height: 350px;
+    object-fit: cover;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: auto;
+}
