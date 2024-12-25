@@ -1,5 +1,5 @@
 .hero-section {
-    background-image: url('/img/banner03.webp');
+    background-image: url('../img/banner03.webp');
     background-size: cover;
     background-position: center;
     color: white;
@@ -9,14 +9,14 @@
 }
 
 #btnTop {
-    display:flex;
-	padding:20px;
-	font-size:20px;
-	color:#fff;
-	cursor:pointer;
-	position: fixed;
-	bottom:20px;
-	right:20px;
+    display: flex;
+    padding: 20px;
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
 }
 
 .symbol {
@@ -41,4 +41,24 @@
 .contact-form {
     max-width: 600px;
     margin: auto;
+}
+
+/* ----- Media Queries ----- */
+
+@media screen and (min-width: 1400px) {
+    .us-text {
+        font-size: 25px;
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    .us-text {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .us-text {
+        font-size: 14px;
+    }
 }
