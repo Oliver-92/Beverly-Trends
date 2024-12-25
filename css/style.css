@@ -17,6 +17,7 @@
     position: fixed;
     bottom: 20px;
     right: 20px;
+    z-index: 9999;
 }
 
 .symbol {
@@ -33,6 +34,10 @@
     transform: scale(0.95);
 }
 
+.us-text {
+    font-size: 25px;
+}
+
 .product-card img {
     height: 350px;
     object-fit: cover;
@@ -45,13 +50,7 @@
 
 /* ----- Media Queries ----- */
 
-@media screen and (min-width: 1400px) {
-    .us-text {
-        font-size: 25px;
-    }
-}
-
-@media screen and (max-width: 1199px) {
+@media screen and (max-width: 1399px) {
     .us-text {
         font-size: 20px;
     }
