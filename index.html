@@ -38,13 +38,31 @@
     </nav>
 
     <!-- Sección principal -->
-    <section class="hero-section d-flex flex-column">
-        <div class="container">
+    <section class="hero-section d-flex flex-column position-relative vh-100">
+        <div id="carouselExampleSlidesOnly" class="carousel slide position-absolute top-0 start-0 w-100 h-100"
+            data-bs-ride="carousel" data-bs-pause="false" data-bs-interval="3000">
+            <div class="carousel-inner h-100">
+                <div class="carousel-item active h-100">
+                    <img src="./img/banner03.webp" class="d-block w-100 h-100 object-fit-cover" alt="...">
+                </div>
+                <div class="carousel-item h-100">
+                    <img src="./img/banner05.webp" class="d-block w-100 h-100 object-fit-cover" alt="...">
+                </div>
+                <div class="carousel-item h-100">
+                    <img src="./img/banner01.webp" class="d-block w-100 h-100 object-fit-cover" alt="...">
+                </div>
+            </div>
+        </div>
+        <div class="container position-relative z-3 text-center text-white">
             <h1 class="display-2 display-md-4 display-sm-5 mb-5">Beverly Trends</h1>
             <p class="lead fs-4 fs-sm-5 pt-5">20% OFF en toda la tienda</p>
         </div>
-        <p class="lead fs-4 fs-sm-5 mt-auto">6 cuotas sin interés | Envío gratis a partir de $100.000</p>
+        <p class="lead fs-4 fs-sm-5 mt-auto position-relative z-3 text-center text-white">
+            6 cuotas sin interés | Envío gratis a partir de $100.000
+        </p>
     </section>
+
+
 
     <button id="btnTop" class="btn position-fixed btn-primary bottom-0 end-0 m-3 p-0" onclick="scrollToTop()">
         <span class="symbol">^</span>
@@ -56,9 +74,18 @@
             <h2 class="text-center mb-5">Nosotros</h2>
             <div class="row align-items-center mt-5">
                 <div class="col-md-6">
-                    <p class="us-text">En Beverly, creemos que la moda es una extensión de la personalidad. Cada pieza que ofrecemos ha sido cuidadosamente seleccionada para permitirte expresarte con estilo, sin importar la ocasión. Nuestra misión es hacer que te sientas único, confiado y espectacular con cada atuendo.</p>
-                    <p class="us-text">Desde la creación de nuestra tienda, nos hemos comprometido a ofrecer productos de alta calidad que reflejan las últimas tendencias y, al mismo tiempo, mantienen la esencia de la moda atemporal. Trabajamos con diseñadores emergentes y marcas reconocidas para asegurarnos de que encuentres algo que ames.</p>
-                    <p class="us-text">Pero Beverly no es solo una tienda de ropa, es una comunidad. Valoramos la autenticidad, la diversidad y la inclusión, y nos esforzamos por crear un espacio donde todos puedan encontrar algo que les haga sentir bien. Te invitamos a unirte a nosotros y descubrir lo mejor de la moda contemporánea.</p>
+                    <p class="us-text">En Beverly, creemos que la moda es una extensión de la personalidad. Cada pieza
+                        que ofrecemos ha sido cuidadosamente seleccionada para permitirte expresarte con estilo, sin
+                        importar la ocasión. Nuestra misión es hacer que te sientas único, confiado y espectacular con
+                        cada atuendo.</p>
+                    <p class="us-text">Desde la creación de nuestra tienda, nos hemos comprometido a ofrecer productos
+                        de alta calidad que reflejan las últimas tendencias y, al mismo tiempo, mantienen la esencia de
+                        la moda atemporal. Trabajamos con diseñadores emergentes y marcas reconocidas para asegurarnos
+                        de que encuentres algo que ames.</p>
+                    <p class="us-text">Pero Beverly no es solo una tienda de ropa, es una comunidad. Valoramos la
+                        autenticidad, la diversidad y la inclusión, y nos esforzamos por crear un espacio donde todos
+                        puedan encontrar algo que les haga sentir bien. Te invitamos a unirte a nosotros y descubrir lo
+                        mejor de la moda contemporánea.</p>
                 </div>
                 <div class="col-md-6">
                     <img src="./img/about-us.webp" alt="Imagen de nosotros" class="img-fluid rounded">

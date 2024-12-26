@@ -1,12 +1,11 @@
 .hero-section {
-    background-image: url('../img/banner03.webp');
-    background-size: cover;
-    background-position: center;
     color: white;
     text-align: center;
     padding: 100px 0;
     height: 100vh;
+    overflow: hidden;
 }
+
 
 #btnTop {
     display: flex;
