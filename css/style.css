@@ -49,6 +49,12 @@
 
 /* ----- Media Queries ----- */
 
+@media screen and (min-width: 1200px) {
+    .img-fluid {
+        width: 80%;
+    }
+}
+
 @media screen and (max-width: 1399px) {
     .us-text {
         font-size: 20px;
