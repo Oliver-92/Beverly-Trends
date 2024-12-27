@@ -1,3 +1,17 @@
+.animate-moving-text {
+    white-space: nowrap; /* No permite que el texto se parta */
+    animation: move-left 15s linear infinite; /* Controla el movimiento */
+  }
+
+  @keyframes move-left {
+    0% {
+      transform: translateX(100%); /* Empieza fuera de la pantalla a la derecha */
+    }
+    100% {
+      transform: translateX(-100vw); /* Termina fuera de la pantalla a la izquierda */
+    }
+  }
+
 .navbar-brand, .display-2{
     font-family: "Aboreto", system-ui;
 }
@@ -78,3 +92,36 @@
         font-size: 14px;
     }
 }
+
+@media (max-width: 768px) {
+    @keyframes move-left {
+        0% {
+          transform: translateX(100%); /* Empieza fuera de la pantalla a la derecha */
+        }
+        100% {
+          transform: translateX(-120vw); /* Termina fuera de la pantalla a la izquierda */
+        }
+      }
+  }
+
+  @media (max-width: 560px) {
+    @keyframes move-left {
+        0% {
+          transform: translateX(100%); /* Empieza fuera de la pantalla a la derecha */
+        }
+        100% {
+          transform: translateX(-180vw); /* Termina fuera de la pantalla a la izquierda */
+        }
+      }
+  }
+
+  @media (max-width: 460px) {
+    @keyframes move-left {
+        0% {
+          transform: translateX(100%); /* Empieza fuera de la pantalla a la derecha */
+        }
+        100% {
+          transform: translateX(-230vw); /* Termina fuera de la pantalla a la izquierda */
+        }
+      }
+  }
