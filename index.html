@@ -6,9 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beverly Trends</title>
     <!-- Bootstrap CSS -->
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Aboreto&family=Alef&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet" defer>
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
@@ -32,10 +38,52 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#contacto">Contacto</a>
                     </li>
+                    <li class="nav-item">
+                        <button type="button" class="btn btn-light" data-bs-toggle="modal"
+                            data-bs-target="#cartModal">
+                            <i class="bi bi-cart me-2"></i>(0)
+                        </button>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
+
+    <!-- Modal del carrito -->
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cartModalLabel"><i class="bi bi-cart"></i> Carrito de Compras</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Lista de productos -->
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Producto</th>
+                                <th>Cantidad</th>
+                                <th>Precio</th>
+                                <th>Total</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cartItems">
+                            <!-- Los productos se agregarán aquí dinámicamente -->
+                        </tbody>
+                    </table>
+                    <div class="text-end">
+                        <strong>Total: $<span id="cartTotal">0.00</span></strong>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-success">Finalizar Compra</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Sección principal -->
     <section class="hero-section d-flex flex-column position-relative vh-100">
@@ -64,7 +112,8 @@
 
 
 
-    <button id="btnTop" class="btn position-fixed btn-primary bottom-0 end-0 m-3 p-0" onclick="scrollToTop()">
+    <button id="btnTop" class="btn position-fixed btn-primary bottom-0 end-0 m-3 p-0 rounded-circle d-none"
+        onclick="scrollToTop()">
         <span class="symbol">^</span>
     </button>
 
