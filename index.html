@@ -15,18 +15,19 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Aboreto&family=Alef&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet" defer>
+    <!--CSS Styles-->
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
-    <!-- Aviso promocional -->
+    <!-- Promotional banner -->
     <div class="bg-dark text-light text-end py-2 top-0 w-100 overflow-hidden"
         style="z-index: 1050; border-bottom: 1px solid #ddd;">
         <div class="d-inline-block animate-moving-text">
-            9 CUOTAS SIN INTERÉS EN TODAS TUS COMPRAS | RETIRO EN TIENDA SIN CARGO | ENVÍO GRATIS A PARTIR DE $120.000
+            9 CUOTAS SIN INTERÉS EN TODAS TUS COMPRAS | RETIRO EN TIENDA SIN CARGO | ENVÍO GRATIS A PARTIR DE $100.000
         </div>
     </div>
-    <!-- Barra de navegación -->
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-sm navbar-light bg-light">
         <div class="container">
             <a class="navbar-brand" href="#">Beverly Trends</a>
@@ -47,7 +48,7 @@
                     </li>
                     <li class="nav-item">
                         <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#cartModal">
-                            <i class="bi bi-cart me-2"></i>(0)
+                            <i class="bi bi-cart me-2 count"></i>
                         </button>
                     </li>
                 </ul>
@@ -55,7 +56,7 @@
         </div>
     </nav>
 
-    <!-- Modal del carrito -->
+    <!-- Cart Modal -->
     <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -64,7 +65,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
                 </div>
                 <div class="modal-body">
-                    <!-- Lista de productos -->
+                    <!-- Products List -->
                     <table class="table">
                         <thead>
                             <tr>
@@ -76,7 +77,7 @@
                             </tr>
                         </thead>
                         <tbody id="cartItems">
-                            <!-- Los productos se agregarán aquí dinámicamente -->
+                            <!-- Products will be added here dynamically -->
                         </tbody>
                     </table>
                     <div class="text-end">
@@ -85,14 +86,14 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-success">Finalizar Compra</button>
+                    <button type="button" class="btn btn-success" onclick="sendCartToEmail()">Finalizar Compra</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Sección principal -->
-    <section class="hero-section d-flex flex-column position-relative vh-100">
+    <!-- Main section -->
+    <section class="hero-section d-flex flex-column position-relative">
         <div id="carouselExampleSlidesOnly" class="carousel slide position-absolute top-0 start-0 w-100 h-100"
             data-bs-ride="carousel" data-bs-pause="false" data-bs-interval="3000">
             <div class="carousel-inner h-100">
@@ -116,14 +117,7 @@
         </p>
     </section>
 
-
-
-    <button id="btnTop" class="btn position-fixed end-0 m-3 p-0 rounded-circle d-none"
-        onclick="scrollToTop()">
-        <span class="symbol"><i class="bi bi-arrow-up-circle-fill"></i></span>
-    </button>
-
-    <!-- Sección Nosotros -->
+    <!-- About us Section -->
     <section id="nosotros" class="py-5">
         <div class="container">
             <h2 class="text-center mb-5">Nosotros</h2>
@@ -149,7 +143,7 @@
         </div>
     </section>
 
-    <!-- Sección Tienda -->
+    <!-- Store Section -->
     <section id="tienda" class="py-5 bg-light">
         <div class="container">
             <h2 class="text-center mb-5">Tienda</h2>
@@ -165,84 +159,90 @@
                 </li>
             </ul>
             <div class="tab-content" id="pills-tabContent">
-                <!-- Productos para Hombre -->
+                <!-- Products for Men -->
                 <div class="tab-pane fade" id="pills-hombre" role="tabpanel" aria-labelledby="pills-hombre-tab">
                     <div class="row">
-                        <!-- Producto 1 -->
+                        <!-- Product 1 -->
                         <div class="col-md-4 mb-4">
                             <div class="card product-card">
                                 <img src="./img/H-Jean-slim-bleu.webp" class="card-img-top" alt="Jean Slim Bleu">
                                 <div class="card-body">
                                     <h5 class="card-title">Jean Slim Bleu</h5>
                                     <p class="card-text"><del>$40.000</del> $37.000</p>
-                                    <a href="#" class="btn btn-dark">Agregar al carrito</a>
+                                    <button class="btn btn-dark" data-product="Jean Slim Bleu"
+                                        data-price="37000">Agregar al carrito</button>
                                 </div>
                             </div>
                         </div>
-                        <!-- Producto 2 -->
+                        <!-- Product 2 -->
                         <div class="col-md-4 mb-4">
                             <div class="card product-card">
                                 <img src="./img/H-Pantalon-chino-slim.webp" class="card-img-top"
                                     alt="Pantalon Chino Slim">
                                 <div class="card-body">
-                                    <h5 class="card-title">Pantalon Chino Slim</h5>
+                                    <h5 class="card-title">Pantalon Slim</h5>
                                     <p class="card-text"><del>$60.000</del> $52.000</p>
-                                    <a href="#" class="btn btn-dark">Agregar al carrito</a>
+                                    <button class="btn btn-dark" data-product="Pantalon Slim" data-price="52000">Agregar
+                                        al carrito</button>
                                 </div>
                             </div>
                         </div>
-                        <!-- Producto 3 -->
+                        <!-- Product 3 -->
                         <div class="col-md-4 mb-4">
                             <div class="card product-card">
                                 <img src="./img/H-Pantalon-montana.webp" class="card-img-top" alt="Pantalón Montana">
                                 <div class="card-body">
                                     <h5 class="card-title">Pantalón Montana</h5>
                                     <p class="card-text"><del>$30.000</del> $27.000</p>
-                                    <a href="#" class="btn btn-dark">Agregar al carrito</a>
+                                    <button class="btn btn-dark" data-product="Pantalón Montana"
+                                        data-price="27000">Agregar al carrito</button>
                                 </div>
                             </div>
                         </div>
-                        <!-- Producto 4 -->
+                        <!-- Product 4 -->
                         <div class="col-md-4 mb-4">
                             <div class="card product-card">
-                                <img src="./img/H-Pantalon-montana.webp" class="card-img-top" alt="Pantalón Montana">
+                                <img src="./img/H-Remera-nice-good.webp" class="card-img-top" alt="Remera Nice Good">
                                 <div class="card-body">
-                                    <h5 class="card-title">Pantalón Montana</h5>
+                                    <h5 class="card-title">Remera Nice Good</h5>
                                     <p class="card-text"><del>$30.000</del> $27.000</p>
-                                    <a href="#" class="btn btn-dark">Agregar al carrito</a>
+                                    <button class="btn btn-dark" data-product="Remera Nice Good"
+                                        data-price="27000">Agregar al carrito</button>
                                 </div>
                             </div>
                         </div>
-                        <!-- Producto 5 -->
+                        <!-- Product 5 -->
                         <div class="col-md-4 mb-4">
                             <div class="card product-card">
                                 <img src="./img/H-Remera-liverpool.webp" class="card-img-top" alt="Remera Liverpool">
                                 <div class="card-body">
                                     <h5 class="card-title">Remera Liverpool</h5>
                                     <p class="card-text"><del>$30.000</del> $27.000</p>
-                                    <a href="#" class="btn btn-dark">Agregar al carrito</a>
+                                    <button class="btn btn-dark" data-product="Remera Liverpool"
+                                        data-price="27000">Agregar al carrito</button>
                                 </div>
                             </div>
                         </div>
-                        <!-- Producto 6 -->
+                        <!-- Product 6 -->
                         <div class="col-md-4 mb-4">
                             <div class="card product-card">
                                 <img src="./img/H-Remera-logotype-union.webp" class="card-img-top"
                                     alt="Remera Logotype Union">
                                 <div class="card-body">
-                                    <h5 class="card-title">Remera Logotype Union</h5>
+                                    <h5 class="card-title">Remera Union</h5>
                                     <p class="card-text"><del>$30.000</del> $27.000</p>
-                                    <a href="#" class="btn btn-dark">Agregar al carrito</a>
+                                    <button class="btn btn-dark" data-product="Remera Union" data-price="27000">Agregar
+                                        al carrito</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Productos para Mujer -->
+                <!-- Products for Women -->
                 <div class="tab-pane fade show active" id="pills-mujer" role="tabpanel"
                     aria-labelledby="pills-mujer-tab">
                     <div class="row">
-                        <!-- Producto 1 -->
+                        <!-- Product 1 -->
                         <div class="col-md-4 mb-4">
                             <div class="card product-card">
                                 <img src="./img/M-Babucha-lino-spandex.webp" class="card-img-top"
@@ -250,11 +250,12 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Babucha Lino Spandex</h5>
                                     <p class="card-text"><del>$15.000</del> $12.000</p>
-                                    <a href="#" class="btn btn-dark">Agregar al carrito</a>
+                                    <button class="btn btn-dark" data-product="Babucha Lino Spandex"
+                                        data-price="12000">Agregar al carrito</button>
                                 </div>
                             </div>
                         </div>
-                        <!-- Producto 2 -->
+                        <!-- Product 2 -->
                         <div class="col-md-4 mb-4">
                             <div class="card product-card">
                                 <img src="./img/M-Calza-algodon-con-lycra.webp" class="card-img-top"
@@ -262,11 +263,12 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Calza de Algodon con Lycra</h5>
                                     <p class="card-text"><del>$20.000</del> $17.000</p>
-                                    <a href="#" class="btn btn-dark">Agregar al carrito</a>
+                                    <button class="btn btn-dark" data-product="Calza de Algodon con Lycra"
+                                        data-price="17000">Agregar al carrito</button>
                                 </div>
                             </div>
                         </div>
-                        <!-- Producto 3 -->
+                        <!-- Product 3 -->
                         <div class="col-md-4 mb-4">
                             <div class="card product-card">
                                 <img src="./img/M-Musculosa-morley-algodon.webp" class="card-img-top"
@@ -274,11 +276,12 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Musculosa Morley Algodon</h5>
                                     <p class="card-text"><del>$45.000</del> $40.000</p>
-                                    <a href="#" class="btn btn-dark">Agregar al carrito</a>
+                                    <button class="btn btn-dark" data-product="Musculosa Morley Algodon"
+                                        data-price="40000">Agregar al carrito</button>
                                 </div>
                             </div>
                         </div>
-                        <!-- Producto 4 -->
+                        <!-- Product 4 -->
                         <div class="col-md-4 mb-4">
                             <div class="card product-card">
                                 <img src="./img/M-Remera-morley-viscosa.webp" class="card-img-top"
@@ -286,11 +289,12 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Remera Morley Viscosa</h5>
                                     <p class="card-text"><del>$45.000</del> $40.000</p>
-                                    <a href="#" class="btn btn-dark">Agregar al carrito</a>
+                                    <button class="btn btn-dark" data-product="Remera Morley Viscosa"
+                                        data-price="40000">Agregar al carrito</button>
                                 </div>
                             </div>
                         </div>
-                        <!-- Producto 5 -->
+                        <!-- Product 5 -->
                         <div class="col-md-4 mb-4">
                             <div class="card product-card">
                                 <img src="./img/M-Remera-algodon-amplia.webp" class="card-img-top"
@@ -298,19 +302,21 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Remera de Algodon Amplia</h5>
                                     <p class="card-text"><del>$45.000</del> $40.000</p>
-                                    <a href="#" class="btn btn-dark">Agregar al carrito</a>
+                                    <button class="btn btn-dark" data-product="Remera de Algodon Amplia"
+                                        data-price="40000">Agregar al carrito</button>
                                 </div>
                             </div>
                         </div>
-                        <!-- Producto 6 -->
+                        <!-- Product 6 -->
                         <div class="col-md-4 mb-4">
                             <div class="card product-card">
                                 <img src="./img/M-Vestido-algodon-escote-en-V.webp" class="card-img-top"
                                     alt="Vestido Escote en V">
                                 <div class="card-body">
-                                    <h5 class="card-title">Vestido Escote en V</h5>
+                                    <h5 class="card-title">Vestido de Algodon Escote en V</h5>
                                     <p class="card-text"><del>$45.000</del> $40.000</p>
-                                    <a href="#" class="btn btn-dark">Agregar al carrito</a>
+                                    <button class="btn btn-dark" data-product="Vestido de Algodon Escote en V"
+                                        data-price="40000">Agregar al carrito</button>
                                 </div>
                             </div>
                         </div>
@@ -320,23 +326,24 @@
         </div>
     </section>
 
-    <!-- Sección Contacto -->
+    <!-- Contact Section -->
     <section id="contacto" class="py-5">
         <div class="container">
             <h2 class="text-center">Contacto</h2>
-            <form class="contact-form">
+            <form class="contact-form" method="post" action="https://formspree.io/f/mgvvykpg">
                 <div class="mb-3">
                     <label for="nombre" class="form-label">Nombre</label>
-                    <input type="text" class="form-control" id="nombre" placeholder="Tu nombre" required>
+                    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Tu nombre" required>
                 </div>
                 <div class="mb-3">
                     <label for="email" class="form-label">Correo Electrónico</label>
-                    <input type="email" class="form-control" id="email" placeholder="nombre@correo.com" required>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="nombre@correo.com"
+                        required>
                 </div>
                 <div class="mb-3">
                     <label for="mensaje" class="form-label">Mensaje</label>
-                    <textarea class="form-control" id="mensaje" rows="4" placeholder="Escribe tu mensaje aquí"
-                        required></textarea>
+                    <textarea class="form-control" id="mensaje" name="mensaje" rows="4"
+                        placeholder="Escribe tu mensaje aquí" required></textarea>
                 </div>
                 <button type="submit" class="btn btn-dark w-100">Enviar</button>
             </form>
@@ -344,8 +351,19 @@
     </section>
 
     <!-- Footer -->
+
+    <button id="btnTop" class="btn position-fixed end-0 m-3 p-0 rounded-circle d-none" onclick="scrollToTop()">
+        <span class="symbol"><i class="bi bi-arrow-up-circle-fill"></i></span>
+    </button>
+
     <footer class="py-4 bg-dark text-light text-center">
-        <p class="mb-0">&copy; 2024 Beverly Indumentaria. Todos los derechos reservados.</p>
+        <p class="mb-2">&copy; 2024 Beverly Indumentaria. Todos los derechos reservados.</p>
+        <span class="social-icons">
+            <a href="https://www.facebook.com"><i class="bi bi-facebook fs-5 m-2"></i></a>
+            <a href="https://www.instagram.com"><i class="bi bi-instagram fs-5 m-2"></i></a>
+            <a href="https://www.whatsapp.com"><i class="bi bi-whatsapp fs-5 m-2"></i></a>
+            <a href="https://www.twitter.com"><i class="bi bi-twitter fs-5 m-2"></i></a>
+        </span>
     </footer>
 
     <!-- Bootstrap JS -->

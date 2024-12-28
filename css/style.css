@@ -31,7 +31,7 @@
     color: white;
     text-align: center;
     padding: 100px 0;
-    height: 100vh;
+    height: 90vh;
     overflow: hidden;
 }
 
@@ -74,13 +74,13 @@
 
 #btnTop {
     z-index: 9999;
-    bottom: 50px;
+    bottom: 90px;
 }
 
 .symbol {
     font-size: 40px;
     padding: 0 5px;
-    
+
 }
 
 #btnTop:hover {
@@ -89,6 +89,15 @@
 
 #btnTop:active {
     transform: scale(0.95);
+}
+
+.social-icons>a>i {
+    text-decoration: none;
+    color: white;
+}
+
+.social-icons>a>i:hover {
+    text-shadow: white 2px 2px 5px;
 }
 
 /* ----- Media Queries ----- */
@@ -122,6 +131,10 @@
             transform: translateX(-120vw);
             /* Termina fuera de la pantalla a la izquierda */
         }
+    }
+
+    .symbol {
+        text-shadow: white 2px 2px 5px;
     }
 }
 
