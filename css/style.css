@@ -1,27 +1,30 @@
 .animate-moving-text {
-    white-space: nowrap; /* No permite que el texto se parta */
-    animation: move-left 15s linear infinite; /* Controla el movimiento */
-  }
+    white-space: nowrap;
+    /* No permite que el texto se parta */
+    animation: move-left 15s linear infinite;
+    /* Controla el movimiento */
+}
 
-  @keyframes move-left {
+@keyframes move-left {
     0% {
-      transform: translateX(100%); /* Empieza fuera de la pantalla a la derecha */
+        transform: translateX(100%);
+        /* Empieza fuera de la pantalla a la derecha */
     }
-    100% {
-      transform: translateX(-100vw); /* Termina fuera de la pantalla a la izquierda */
-    }
-  }
 
-.navbar-brand, .display-2{
+    100% {
+        transform: translateX(-100vw);
+        /* Termina fuera de la pantalla a la izquierda */
+    }
+}
+
+.navbar-brand,
+.display-2 {
     font-family: "Aboreto", system-ui;
 }
 
-.display-2, .lead{
+.display-2,
+.lead {
     text-shadow: black 1px 1px 2px;
-}
-
-.btn-dark{
-    z-index: 1;
 }
 
 .hero-section {
@@ -32,31 +35,27 @@
     overflow: hidden;
 }
 
-
-#btnTop {
-    display: flex;
-    padding: 20px;
-    font-size: 20px;
-    color: #fff;
-    cursor: pointer;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 9999;
+/* Estilo para los botones de las pestañas (no activos) */
+.nav-pills .nav-link {
+    color: black;
+    /* Letras blancas */
+    background-color: transparent;
+    /* Fondo transparente */
 }
 
-.symbol {
-    text-shadow: black 1px 1px 2px;
-    font-size: 30px;
-    padding: 0 5px;
+/* Estilo para el botón activo */
+.nav-pills .nav-link.active {
+    background-color: black;
+    /* Fondo negro */
+    color: white;
+    /* Letras blancas */
+    border-color: black;
+    /* Borde negro */
 }
 
-#btnTop:hover {
+/* Estilo al pasar el ratón (hover) sobre el botón no activo */
+.nav-pills .nav-link:hover {
     transform: scale(1.1);
-}
-
-#btnTop:active {
-    transform: scale(0.95);
 }
 
 .us-text {
@@ -71,6 +70,25 @@
 .contact-form {
     max-width: 600px;
     margin: auto;
+}
+
+#btnTop {
+    z-index: 9999;
+    bottom: 50px;
+}
+
+.symbol {
+    font-size: 40px;
+    padding: 0 5px;
+    
+}
+
+#btnTop:hover {
+    transform: scale(1.1);
+}
+
+#btnTop:active {
+    transform: scale(0.95);
 }
 
 /* ----- Media Queries ----- */
@@ -96,32 +114,41 @@
 @media (max-width: 768px) {
     @keyframes move-left {
         0% {
-          transform: translateX(100%); /* Empieza fuera de la pantalla a la derecha */
+            transform: translateX(100%);
+            /* Empieza fuera de la pantalla a la derecha */
         }
-        100% {
-          transform: translateX(-120vw); /* Termina fuera de la pantalla a la izquierda */
-        }
-      }
-  }
 
-  @media (max-width: 560px) {
+        100% {
+            transform: translateX(-120vw);
+            /* Termina fuera de la pantalla a la izquierda */
+        }
+    }
+}
+
+@media (max-width: 560px) {
     @keyframes move-left {
         0% {
-          transform: translateX(100%); /* Empieza fuera de la pantalla a la derecha */
+            transform: translateX(100%);
+            /* Empieza fuera de la pantalla a la derecha */
         }
-        100% {
-          transform: translateX(-180vw); /* Termina fuera de la pantalla a la izquierda */
-        }
-      }
-  }
 
-  @media (max-width: 460px) {
+        100% {
+            transform: translateX(-180vw);
+            /* Termina fuera de la pantalla a la izquierda */
+        }
+    }
+}
+
+@media (max-width: 460px) {
     @keyframes move-left {
         0% {
-          transform: translateX(100%); /* Empieza fuera de la pantalla a la derecha */
+            transform: translateX(100%);
+            /* Empieza fuera de la pantalla a la derecha */
         }
+
         100% {
-          transform: translateX(-230vw); /* Termina fuera de la pantalla a la izquierda */
+            transform: translateX(-230vw);
+            /* Termina fuera de la pantalla a la izquierda */
         }
-      }
-  }
+    }
+}
