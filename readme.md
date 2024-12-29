@@ -2,7 +2,6 @@
 
 Bienvenido a **Beverly Trends**, una tienda en línea donde podrás encontrar las últimas tendencias en moda para hombres y mujeres. Visita la página: [Beverly Trends](https://oliver-92.github.io/Beverly-Trends/).
 
----
 
 ## 📋 Descripción del Proyecto
 
@@ -10,7 +9,6 @@ Este proyecto es una aplicación web diseñada para ofrecer una experiencia de c
 
 Está desarrollado con tecnologías web estándar, implementando una interfaz amigable y responsiva para todo tipo de dispositivos.
 
----
 
 ## ✨ Características Principales
 
@@ -29,7 +27,6 @@ Está desarrollado con tecnologías web estándar, implementando una interfaz am
 - **Interactividad Dinámica**  
   Uso de JavaScript para manejar funcionalidades del carrito y actualizaciones dinámicas.  
 
----
 
 ## 🛠️ Tecnologías Utilizadas
 
@@ -39,7 +36,6 @@ Está desarrollado con tecnologías web estándar, implementando una interfaz am
 - **Bootstrap 5**: Framework para diseño responsivo y componentes.  
 - **Formspree**: Servicio para el envío de formularios por correo electrónico.  
 
----
 
 ## 📁 Estructura del Proyecto
 
@@ -85,21 +81,18 @@ Está desarrollado con tecnologías web estándar, implementando una interfaz am
    - El carrito se actualiza dinámicamente en tiempo real.
    - Los productos se agrupan en el carrito.
 
----
 
 ## 🌟Recursos Adicionales
 
 - [Formspree](https://formspree.io/): Servicio para el envío de formularios por correo electrónica.
 - [Bootstrap 5](https://getbootstrap.com/): Framework de CSS para disenño responsivo y componentes.
 
----
 
 ## 📝Recursos 
 
 - [GitHub](https://github.com/Oliver-92/Beverly-Trends): Repositorio en GitHub.
 - [Ezequiel Oliver](https://github.com/Oliver-92): Desarrollador del proyecto.
 
----
 
 ## Contribuciones
 
