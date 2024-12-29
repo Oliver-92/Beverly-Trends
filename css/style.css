@@ -1,22 +1,20 @@
+/* Promotional banner style */
 .animate-moving-text {
     white-space: nowrap;
-    /* No permite que el texto se parta */
     animation: move-left 15s linear infinite;
-    /* Controla el movimiento */
 }
 
 @keyframes move-left {
     0% {
         transform: translateX(100%);
-        /* Empieza fuera de la pantalla a la derecha */
     }
 
     100% {
         transform: translateX(-100vw);
-        /* Termina fuera de la pantalla a la izquierda */
     }
 }
 
+/* Navbar Section */
 .navbar-brand,
 .display-2 {
     font-family: "Aboreto", system-ui;
@@ -27,6 +25,7 @@
     text-shadow: black 1px 1px 2px;
 }
 
+/* Hero Section */
 .hero-section {
     color: white;
     text-align: center;
@@ -35,43 +34,42 @@
     overflow: hidden;
 }
 
-/* Estilo para los botones de las pestañas (no activos) */
+/* Style for tab buttons (not active) */
 .nav-pills .nav-link {
     color: black;
-    /* Letras blancas */
     background-color: transparent;
-    /* Fondo transparente */
 }
 
-/* Estilo para el botón activo */
+/* Style for tab buttons (active) */
 .nav-pills .nav-link.active {
     background-color: black;
-    /* Fondo negro */
     color: white;
-    /* Letras blancas */
     border-color: black;
-    /* Borde negro */
 }
 
-/* Estilo al pasar el ratón (hover) sobre el botón no activo */
+/* Hover effect */
 .nav-pills .nav-link:hover {
     transform: scale(1.1);
 }
 
+/* About Us Section */
 .us-text {
     font-size: 25px;
 }
 
+/* Product Card */
 .product-card img {
     height: 350px;
     object-fit: cover;
 }
 
+/* Contact Form */
 .contact-form {
     max-width: 600px;
     margin: auto;
 }
 
+/* Scroll to Top Button */
 #btnTop {
     z-index: 9999;
     bottom: 90px;
@@ -91,6 +89,7 @@
     transform: scale(0.95);
 }
 
+/* Social Media Icons */
 .social-icons>a>i {
     text-decoration: none;
     color: white;
@@ -101,7 +100,6 @@
 }
 
 /* ----- Media Queries ----- */
-
 @media screen and (min-width: 1200px) {
     .img-fluid {
         width: 80%;
@@ -124,12 +122,10 @@
     @keyframes move-left {
         0% {
             transform: translateX(100%);
-            /* Empieza fuera de la pantalla a la derecha */
         }
 
         100% {
             transform: translateX(-120vw);
-            /* Termina fuera de la pantalla a la izquierda */
         }
     }
 
@@ -142,12 +138,10 @@
     @keyframes move-left {
         0% {
             transform: translateX(100%);
-            /* Empieza fuera de la pantalla a la derecha */
         }
 
         100% {
             transform: translateX(-180vw);
-            /* Termina fuera de la pantalla a la izquierda */
         }
     }
 }
@@ -156,12 +150,10 @@
     @keyframes move-left {
         0% {
             transform: translateX(100%);
-            /* Empieza fuera de la pantalla a la derecha */
         }
 
         100% {
             transform: translateX(-230vw);
-            /* Termina fuera de la pantalla a la izquierda */
         }
     }
 }

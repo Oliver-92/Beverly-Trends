@@ -1,15 +1,15 @@
 const btnTop = document.getElementById('btnTop');
 
-// Mostrar botón al hacer scroll
+// Show button when scrolling 
 window.onscroll = function () {
     if (document.documentElement.scrollTop > 300) {
-        btnTop.classList.remove('d-none'); // Mostrar botón
+        btnTop.classList.remove('d-none'); // Show button
     } else {
-        btnTop.classList.add('d-none'); // Ocultar botón
+        btnTop.classList.add('d-none'); // Hide button
     }
 };
 
-// Función para regresar al inicio
+// Function to scroll to top
 function scrollToTop() {
     window.scrollTo({
         top: 0,
@@ -17,10 +17,10 @@ function scrollToTop() {
     });
 };
 
-// Inicializar el carrito desde localStorage
+// Initialize cart from localStorage
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-// Función para actualizar el contador del carrito
+// Function to update cart count
 function updateCartCount() {
     let count = 0;
     cart.forEach(product => {
@@ -29,7 +29,7 @@ function updateCartCount() {
     document.querySelector(".count").textContent = ' (' + count + ')';
 };
 
-// Función para agregar productos al carrito
+// Function to add a product to the cart
 function addToCart(productName, price) {
     const existingProduct = cart.find(product => product.name === productName);
     if (existingProduct) {
@@ -43,7 +43,7 @@ function addToCart(productName, price) {
     saveCartToLocalStorage();
 }
 
-// Función para actualizar el carrito en el DOM
+// Function to update the cart
 function updateCart() {
     const cartItems = document.getElementById('cartItems');
     const cartTotal = document.getElementById('cartTotal');
@@ -71,19 +71,19 @@ function updateCart() {
     cartTotal.textContent = total;
 }
 
-// Función para eliminar un producto del carrito
+// Function to remove a product from the cart
 function removeFromCart(index) {
     cart.splice(index, 1);
     updateCart();
     saveCartToLocalStorage();
 }
 
-// Función para guardar el carrito en localStorage
+// Function to save the cart to localStorage
 function saveCartToLocalStorage() {
     localStorage.setItem('cart', JSON.stringify(cart));
 }
 
-// Event listener para los botones "Agregar al carrito"
+// Event listener to add products to the cart
 document.querySelectorAll('.btn[data-product][data-price]').forEach(button => {
     button.addEventListener('click', () => {
         const productName = button.dataset.product;
@@ -94,27 +94,26 @@ document.querySelectorAll('.btn[data-product][data-price]').forEach(button => {
 });
 
 
-// Función para enviar el carrito por correo
+// Function to send the cart to Formspree
 function sendCartToEmail() {
-    // Verifica si el carrito no está vacío
     if (cart.length === 0) {
         alert("El carrito está vacío. Agrega productos antes de enviarlo.");
         return;
     }
 
-    // Prepara la información del carrito
+    // Format the cart details
     let cartDetails = cart.map(product =>
         `Producto: ${product.name}, Cantidad: ${product.quantity}, Precio: $${product.price.toFixed(2)}, Total: $${product.total.toFixed(2)}`
     ).join('\n');
 
-    // Formato del mensaje
+    // Format the message
     const message = `Detalle del carrito:\n\n${cartDetails}\n\nTotal General: $${cart.reduce((acc, product) => acc + product.total, 0).toFixed(2)}`;
 
-    // Cuerpo del formulario para enviar a Formspree
+    // Create a FormData object
     const formData = new FormData();
     formData.append("carrito", message);
 
-    // Enviar los datos al endpoint de Formspree
+    // Send the cart to Formspree
     fetch("https://formspree.io/f/mgvvykpg", {
         method: "POST",
         body: formData,
@@ -124,9 +123,8 @@ function sendCartToEmail() {
     })
         .then(response => {
             if (response.ok) {
-                // Vaciar el carrito después de enviar el correo
-                cart = []; // Limpiar el carrito completamente
-                updateCart(); // Actualizar la vista del carrito (vacío)
+                cart = []; // Clear the cart
+                updateCart(); // Update the cart in the DOM
                 alert("Carrito enviado exitosamente.");
             } else {
                 alert("Ocurrió un error al enviar el carrito.");
@@ -138,6 +136,5 @@ function sendCartToEmail() {
         });
 }
 
-// Actualizar el carrito en el DOM al cargar la página
+// Update cart in DOM on page load
 updateCart();
-
