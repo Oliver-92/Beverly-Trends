@@ -59,8 +59,8 @@ function updateCart() {
             <tr>
                 <td>${product.name}</td>
                 <td>${product.quantity}</td>
-                <td>$${product.price.toFixed(2)}</td>
-                <td>$${product.total.toFixed(2)}</td>
+                <td>$${product.price}</td>
+                <td>$${product.total}</td>
                 <td>
                     <button class="btn btn-sm btn-danger" onclick="removeFromCart(${index})">Eliminar</button>
                 </td>
@@ -68,7 +68,7 @@ function updateCart() {
         `;
     });
 
-    cartTotal.textContent = total.toFixed(2);
+    cartTotal.textContent = total;
 }
 
 // Función para eliminar un producto del carrito
@@ -124,6 +124,9 @@ function sendCartToEmail() {
     })
         .then(response => {
             if (response.ok) {
+                // Vaciar el carrito después de enviar el correo
+                cart = []; // Limpiar el carrito completamente
+                updateCart(); // Actualizar la vista del carrito (vacío)
                 alert("Carrito enviado exitosamente.");
             } else {
                 alert("Ocurrió un error al enviar el carrito.");
